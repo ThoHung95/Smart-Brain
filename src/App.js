@@ -67,7 +67,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch("https://express-hello-world-jn9r.onrender.com/imageurl", {
+    fetch("https://smart-brain-api-gkgw.onrender.com/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -77,7 +77,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((result) => {
         if (result) {
-          fetch("https://express-hello-world-jn9r.onrender.com/image", {
+          fetch("https://smart-brain-api-gkgw.onrender.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

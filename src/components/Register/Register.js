@@ -23,7 +23,7 @@ class Register extends Component {
   };
 
   onSubmitSignin = () => {
-    fetch("https://express-hello-world-jn9r.onrender.com/register", {
+    fetch("https://smart-brain-api-gkgw.onrender.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
