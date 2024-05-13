@@ -75,8 +75,8 @@ class App extends Component {
       }),
     })
       .then((response) => response.json())
-      .then((result) => {
-        if (result) {
+      .then((response) => {
+        if (response) {
           fetch("https://smart-brain-api-gkgw.onrender.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
@@ -89,7 +89,7 @@ class App extends Component {
               this.setState(Object.assign(this.state.user, { entries: count }));
             })
             .catch(console.log);
-          this.displayFaceBox(this.calculateFaceLocation(result));
+          this.displayFaceBox(this.calculateFaceLocation(response));
         }
       })
       .catch((err) => console.log(err));
