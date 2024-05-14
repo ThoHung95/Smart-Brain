@@ -111,9 +111,9 @@ class App extends Component {
       returnClarifaiRequestOptions(this.state.input)
     )
       .then((response) => response.json())
-      .then((response) => {
-        if (response) {
-          fetch("https://smart-brain-api-gkgw.onrender.com//image", {
+      .then((result) => {
+        if (result) {
+          fetch("https://smart-brain-api-gkgw.onrender.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -125,7 +125,7 @@ class App extends Component {
               this.setState(Object.assign(this.state.user, { entries: count }));
             })
             .catch(console.log);
-          this.displayFaceBox(this.calculateFaceLocation(response));
+          this.displayFaceBox(this.calculateFaceLocation(result));
         }
       })
       .catch((err) => console.log(err));
